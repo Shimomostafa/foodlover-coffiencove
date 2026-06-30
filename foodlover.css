@@ -1,0 +1,1128 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+:root{
+  --bg-color:#f1f1f1;
+    --bg-secondary:#fbfbfb;
+    --dark-gray:#333;
+    --light-brown:#c7a17a;
+    --black:#1f2226;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1300px;
+    margin:auto;
+}
+p{
+  color: #9a9a9a;
+  font-size: 14px;
+}
+
+/* utility classes*/
+.primary-text {
+    color: rgb(100, 203, 232);
+}
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+}
+.btn-primary {
+    color: #fff;
+    border: 1px solid #fff;
+}
+ .btn-primary:hover,
+ .btn-secondary:hover{
+    background: rgb(100, 203, 232);
+ }
+ .btn-secondary{
+    color: aliceblue;
+    background: #383848;
+    margin-top: 2rem;
+
+ }
+/*bottun-about*/
+/* From Uiverse.io by MuhammadHasann */ 
+.button-about {
+  --black-700: hsla(0 0% 12% / 1);
+  --border_radius: 9999px;
+  --transtion: 0.3s ease-in-out;
+  --offset: 2px;
+
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  gap: 0.5rem;
+margin-top: 30px;
+  transform-origin: center;
+
+  padding: 1rem 2rem;
+  background-color: transparent;
+
+  
+  border: none;
+  border-radius: var(--border_radius);
+  transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+
+  transition: transform var(--transtion);
+}
+
+.button-about::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-700);
+
+  border-radius: var(--border_radius);
+  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(201 97% 50% / 0.75);
+
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+.button-about::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: hsla(201, 97%, 61%, 0.75);
+  background-image: radial-gradient(
+      at 51% 89%,
+      hsla(200, 45%, 65%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, hsla(200, 36%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, hsla(200, 36%, 60%, 1) 0px, transparent 50%);
+  background-position: top;
+
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 2;
+}
+
+.button-about:is(:hover, :focus-visible) {
+  --active: 1;
+}
+.button-about:active {
+  transform: scale(1);
+}
+
+.button-about .dots_border {
+  --size_border: calc(100% + 5px);
+
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+
+  border-radius: var(--border_radius);
+  z-index: -10;
+}
+
+.button-about .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transform: rotate(0deg);
+
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(0, 0, 0);
+
+  mask: linear-gradient(transparent 0%, rgb(255, 255, 255) 120%);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button-about .sparkle {
+  position: relative;
+  z-index: 10;
+
+  width: 1.75rem;
+}
+
+.button-about .sparkle .path {
+  fill: currentColor;
+  stroke: currentColor;
+
+  transform-origin: center;
+
+  color: hsl(0, 0%, 100%);
+}
+
+.button-about:is(:hover, :focus) .sparkle .path {
+  animation: path 1.5s linear 0.5s infinite;
+}
+
+.button-about .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+.button-about .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+.button-about .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+.button-about .text_button {
+  position: relative;
+  z-index: 10;
+
+  background-image: linear-gradient(
+    90deg,
+    hsla(0 0% 100% / 1) 0%,
+    hsla(0 0% 100% / var(--active, 0)) 120%
+  );
+  background-clip: text;
+
+  font-size: 1rem;
+  color: transparent;
+}
+/*button-about end*/
+.button {
+  --black-700: hsla(0 0% 12% / 1);
+  --border_radius: 9999px;
+  --transtion: 0.3s ease-in-out;
+  --offset: 2px;
+
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+margin-top: 20px;
+  transform-origin: center;
+
+  padding: 1rem 2rem;
+  background-color: transparent;
+
+  margin: auto;
+  
+  border: none;
+  border-radius: var(--border_radius);
+  transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+
+  transition: transform var(--transtion);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-700);
+
+  border-radius: var(--border_radius);
+  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(201 97% 50% / 0.75);
+
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: hsla(201, 97%, 61%, 0.75);
+  background-image: radial-gradient(
+      at 51% 89%,
+      hsla(200, 45%, 65%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, hsla(200, 36%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, hsla(200, 36%, 60%, 1) 0px, transparent 50%);
+  background-position: top;
+
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 2;
+}
+
+.button:is(:hover, :focus-visible) {
+  --active: 1;
+}
+.button:active {
+  transform: scale(1);
+}
+
+.button .dots_border {
+  --size_border: calc(100% + 5px);
+
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+
+  border-radius: var(--border_radius);
+  z-index: -10;
+}
+
+.button .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transform: rotate(0deg);
+
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(0, 0, 0);
+
+  mask: linear-gradient(transparent 0%, rgb(255, 255, 255) 120%);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button .sparkle {
+  position: relative;
+  z-index: 10;
+
+  width: 1.75rem;
+}
+
+.button .sparkle .path {
+  fill: currentColor;
+  stroke: currentColor;
+
+  transform-origin: center;
+
+  color: hsl(0, 0%, 100%);
+}
+
+.button:is(:hover, :focus) .sparkle .path {
+  animation: path 1.5s linear 0.5s infinite;
+}
+
+.button .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+.button .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+.button .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+.button .text_button {
+  position: relative;
+  z-index: 10;
+
+  background-image: linear-gradient(
+    90deg,
+    hsla(0 0% 100% / 1) 0%,
+    hsla(0 0% 100% / var(--active, 0)) 120%
+  );
+  background-clip: text;
+
+  font-size: 1rem;
+  color: transparent;
+}
+
+/*botton-header*/
+.button-header {
+  --black-700: hsla(0 0% 12% / 1);
+  --border_radius: 9999px;
+  --transtion: 0.3s ease-in-out;
+  --offset: 2px;
+
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+margin-top: 20px;
+  transform-origin: center;
+
+  padding: 1rem 2rem;
+  background-color: transparent;
+
+  border: none;
+  border-radius: var(--border_radius);
+  transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+
+  transition: transform var(--transtion);
+}
+
+.button-header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-700);
+
+  border-radius: var(--border_radius);
+  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(201 97% 50% / 0.75);
+
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+.button-header::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: hsla(201, 97%, 61%, 0.75);
+  background-image: radial-gradient(
+      at 51% 89%,
+      hsla(200, 45%, 65%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, hsla(200, 36%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, hsla(200, 36%, 60%, 1) 0px, transparent 50%);
+  background-position: top;
+
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 2;
+}
+
+.button-header:is(:hover, :focus-visible) {
+  --active: 1;
+}
+.button-header:active {
+  transform: scale(1);
+}
+
+.button-header .dots_border {
+  --size_border: calc(100% + 5px);
+
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+
+  border-radius: var(--border_radius);
+  z-index: -10;
+}
+
+.button-header .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transform: rotate(0deg);
+
+  width: 100%;
+  height: 2rem;
+  background-color: rgb(255, 255, 255);
+
+  mask: linear-gradient(transparent 0%, rgb(255, 255, 255) 120%);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button-header .sparkle {
+  position: relative;
+  z-index: 10;
+
+  width: 1.75rem;
+}
+
+.button-header .sparkle .path {
+  fill: currentColor;
+  stroke: currentColor;
+
+  transform-origin: center;
+
+  color: hsl(0, 0%, 100%);
+}
+
+.button-header:is(:hover, :focus) .sparkle .path {
+  animation: path 1.5s linear 0.5s infinite;
+}
+
+.button-header .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+.button-header .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+.button-header .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+.button-header .text_button {
+  position: relative;
+  z-index: 10;
+
+  background-image: linear-gradient(
+    90deg,
+    hsla(0 0% 100% / 1) 0%,
+    hsla(0 0% 100% / var(--active, 0)) 120%
+  );
+  background-clip: text;
+
+  font-size: 1rem;
+  color: transparent;
+}
+
+
+/* Header start */
+header {
+  height: 100vh;
+  background: url("images/home_bg.jpeg") center center/cover no-repeat;
+  position: relative;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+#navbar img {
+  width: 80px;
+  margin-left: 100px;
+}
+
+nav ul {
+  display: flex;
+  margin-right: 100px;
+}
+
+nav ul li a {
+  padding: 15px 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #5bb6e4;
+  transition:all 0.35s ease-in;
+}
+
+header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75%; 
+}
+
+header::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0, 0.6);
+}
+
+header .content h1 {
+  font-size: 40px;
+  color: #fff;
+}
+
+header .content p {
+  color: #fff;
+  margin: 20px 0 40px;
+}
+
+header * {
+  z-index: 10;
+}
+
+
+/* Header end */
+
+
+
+/* about start*/
+#about {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+#about .title ,
+#offers .title ,
+#menu .title{
+text-align: center;
+margin-bottom: 4rem;
+}
+#about h2 ,
+#offers h2 ,
+#menu h2 ,
+#gallery h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+#about h2 {
+        color: black;
+}
+#about .title p ,
+#menu .title p {
+font-size: 14px;
+color: #9a9a9a;
+font-weight: 700;
+}
+#about .title p {
+  font-size: 25px;
+}
+
+#about .about-content{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#about .about-content .img{
+    width: 300px;
+    
+}
+
+#about .about-content p{
+    color: #9a9a9a;
+    margin-right: 7rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* about end*/
+
+/* offers start*/
+#offers {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    background: url("images/offer-background.jpg") center center/cover fixed;
+}
+#offers h2 {
+    color: aqua;
+}
+#offers .title p {
+    color: rgb(127, 224, 192);
+    font-weight: 600;
+}
+#offers .offers-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(237, 245, 239);
+}
+#offers .offers-items img {
+    width: 250px;
+}
+#offers .offers-items h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+#offers .offers-items p {
+    font-size: 14px;
+    padding: 0 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+#offers .offers-items span {
+    font-size: 18px;
+ font-weight: 700;
+ margin-left: 5px;
+}
+/* offers end*/
+
+/*menu start*/
+#menu {
+    background: #f4f4f4;
+    padding: 5rem 0;
+}
+#menu .title{
+  text-align: center;
+}
+#menu .menu-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu  .menu-items .menu-item img {
+width: 80px;
+border-radius: 50%;
+margin-right: 20px;
+transition: 0.35s ease;
+}
+#menu  .menu-items .menu-item img:hover{
+  transform: scale(1.8);
+}
+#menu  .menu-items .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+#menu  .menu-items .menu-item h3{
+    color: #383848;
+    border-bottom: 1px dashed #9a9a9a;
+    padding-bottom: 10px;
+    position: relative;
+}
+#menu  .menu-items .menu-item span {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#menu  .menu-items .menu-item p{
+    margin-top: 10px;
+}
+#menu .btn {
+    display: block;
+    margin:  20px auto 0;
+    background: aqua;
+    color: beige;
+    cursor: pointer;
+}
+#menu .btn:hover{
+    background: #26083e;
+}
+
+/*menu end*/
+/* Daytime section Start */
+#daytime {
+  background: url("images/daytime_bg.jpeg") center center/cover fixed no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+#daytime .daytime-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+  transition: 0.5s ease;
+}
+#daytime .daytime-items:hover{
+  transform: scale(1.2);
+}
+
+#daytime .daytime-items h3 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+#daytime .daytime-items p {
+  font-weight: 500;
+}
+/* Daytime section End */
+
+/* Gallery section start */
+#gallery {
+  background: url("images/gallery-background.jpg") center center/cover no-repeat;
+  padding: 8rem 0 6rem;
+}
+#gallery h2 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#gallery .img-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#gallery .img-gallery img {
+  margin: 20px;
+  width: 280px;
+  height: 200px;
+  border-radius: 15px;
+  opacity: 0.5;
+  transition: 0.35s ease;
+}
+
+#gallery .img-gallery img:hover {
+  opacity: 1;
+  transform: scale(1.18);
+}
+/* Gallery section end */
+#anotherstor .row{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+}
+#anotherstor .row .about-content h2{
+font-size: 28px;
+margin-bottom: 10px;
+}
+.text-primary{
+color: #c7a17a;
+}
+#anotherstor .container h1{
+  margin-left: 550px;
+  margin-top: 100px;
+  font-size: 80px;
+}
+
+#anotherstor .row .about-content .item{
+    margin: 2rem 0;
+}
+#anotherstor .row .about-content .item h3{
+    margin-bottom: 5px;
+}
+#anotherstor .row  .item .button{
+  display: inline-block;
+    background-color: #c7a17a;
+    padding: 5px 5px;
+    color: #fff;
+    border-radius: 30px;
+transition: all 0.3s ease;
+border: none;
+}
+#anotherstor .row  .item .button:hover{
+  background-color: #26083e;
+}
+/*about end*/
+/* Contact Section start */
+#contact {
+  background: #f4f2ed;
+  padding: 5rem 0;
+}
+
+#contact .container {
+  max-width: 900px;
+}
+
+#contact .contact-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#contact .contact-info {
+  width: 50%;
+}
+
+#contact .contact-info div {
+  margin: 30px 0;
+  line-height: 1.7;
+}
+
+#contact .contact-info h3 {
+  font-size: 28px;
+  color: #383848;
+  margin-bottom: 10px;
+}
+
+#contact .contact-info p {
+  color: #9a9a9a;
+}
+
+#contact .contact-info p i {
+  color: #5bb6e4;
+  margin-right: 5px;
+}
+
+#contact .contact-info a i {
+  color: #fff;
+  background: #383848;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+#contact .contact-info a i:hover {
+  background-color: #5ba6e4;
+  color: #383848;
+}
+
+form {
+  width: 50%;
+}
+
+form input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 20px 15px;
+  margin: 20px 0;
+  border: none;
+  background-color: #e3e2dd;
+}
+
+
+form input:focus,
+textarea:focus {
+  outline: none;
+}
+
+form button {
+  color: #fff;
+}
+
+/* Contact Section End */
+/* Footer Start */
+#footer {
+  background-color: #383848;
+  text-align: center;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 14px;
+}
+/* Footer End */
+.marquee{
+  font-size:xx-large;
+  font-weight: 600;
+}
+/* Responsiveness */
+/* Medium Screen + Tablet */
+@media (max-width: 1000px) {
+  #navbar img {
+    margin-left: 20px;
+  }
+
+  nav ul {
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    padding: 10px;
+  }
+
+  header .content h1 {
+    font-size: 28px;
+  }
+
+  #about {
+    height: auto;
+    padding: 4rem 2rem;
+  }
+
+  #about .about-content p {
+    margin-right: 2rem;
+  }
+
+  #about img {
+    width: 250px;
+  }
+
+  #offers .offers-items img {
+    width: 150px;
+  }
+
+  #offers .offers-items h3 {
+    font-size: 18px;
+  }
+
+  #menu .menu-items {
+    display: block;
+  }
+
+  #contact .contact-content {
+    flex-direction: column;
+  }
+
+  /* Mobile Devices */
+  @media (max-width: 600px) {
+    #navbar {
+      flex-direction: column;
+    }
+
+    #navbar img {
+      margin-bottom: 20px;
+    }
+
+    header .content h1 {
+      font-size: 18px;
+    }
+
+    header .content p {
+      font-size: 14px;
+    }
+
+    #about .about-content {
+      flex-direction: column;
+    }
+
+    #about .about-content a {
+      margin: 2rem 0;
+    }
+
+    #about img {
+      display: none;
+    }
+
+    #offers {
+      height: auto;
+      padding: 30px 10px;
+    }
+
+    #offers .offers-items {
+      flex-direction: column;
+    }
+
+    #menu .menu-items .menu-item {
+      margin: 20px 10px;
+    }
+
+    #daytime .daytime-items {
+      display: block;
+      height: auto;
+      padding: 30px 0;
+    }
+
+    #daytime .daytime-items .daytime-item {
+      margin-top: 20px;
+    }
+
+    #contact .contact-info,
+    form {
+      width: 80%;
+    }
+  }
+}
+
